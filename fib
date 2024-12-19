@@ -1,0 +1,32 @@
+    /*0*/add + skip_second_source + skip_first_source,0,fib,0,
+		/*4*/add + skip_second_source,counter,8,stack_,
+		/*8*/activate_logic_alu + always,0,0,16,
+
+		/*12*/activate_logic_alu + always,0,0,end_of_program,
+
+		/*fibonacci func*/
+		/*16*/activate_logic_alu + not_equal_ + skip_second_source,0,1,28,
+		/*20*/add + skip_second_source+skip_first_source,0,1,1,
+		/*24*/no_changes_first,stack_,0,counter,
+		/*28*/activate_logic_alu + not_equal_ + skip_second_source,0,2,40,
+		/*32*/add + skip_second_source + skip_first_source,0,1,1,
+		/*36*/no_changes_first,stack_,0,counter,
+
+
+		/*main body*/
+		/*40*/no_changes_first,0,0,stack_,
+		/*44*/sub + skip_second_source,0,1,0,
+
+		/*48*/add + skip_second_source,counter,8,stack_,
+		/*52*/activate_logic_alu + always,0,0,16,
+
+		/*56*/add+ skip_second_source,1,0,2,
+		/*60*/no_changes_first,stack_,0,0,
+		/*64*/no_changes_first,2,0,stack_,
+		/*68*/sub + skip_second_source,0,2,0,
+
+		/*72*/add + skip_second_source,counter,8,stack_,
+		/*76*/activate_logic_alu + always,0,0,16,
+		/*80*/no_changes_first,stack_,0,2,
+		/*84*/add ,1,2,1,
+		/*88*/no_changes_first,stack_,0,counter,
